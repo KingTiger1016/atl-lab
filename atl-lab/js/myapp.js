@@ -13,3 +13,11 @@ myapp.namespace=function(ns_string){
 	}
 	return parent;
 };
+
+function test (){
+	alert('test');
+}
+
+function helloword(){
+	console.log(1);
+}
