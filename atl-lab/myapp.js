@@ -1,3 +1,3 @@
-<script>
-alert('hello world!');
-</script>
+function abc(){
+  return 1+2
+}
