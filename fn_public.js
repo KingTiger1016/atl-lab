@@ -1,3 +1,4 @@
+// 變更網址使用
 function hostip() {
     var test = true;
     if (test) {
