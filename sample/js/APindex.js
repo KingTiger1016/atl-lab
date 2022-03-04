@@ -440,47 +440,10 @@ function ajaxPostData(name, data){
 }
 
 
-//選人
+// 選人
 function staff_receive(data){
 	// console.log(data);
-	var columns = {
-		    ck: {
-		        field: 'ck',
-		        checkbox: true
-		    },
-		    cDept: {
-		        field: 'cDept',
-		        title: '部門',
-		        sortable: true,
-		        order: 'desc',
-		        filterControl: 'input',
-		        cellStyle: "cellStyle"
-		    },
-		    cName: {
-		        field: 'cName',
-		        title: '中文姓名',
-		        sortable: true,
-		        order: 'desc',
-		        filterControl: 'input',
-		        cellStyle: "cellStyle"
-		    },
-		    eName: {
-		        field: 'eName',
-		        title: '英文姓名',
-		        sortable: true,
-		        order: 'desc',
-		        filterControl: 'input',
-		        cellStyle: "cellStyle"
-		    },
-		    employeeID: {
-		        field: 'employeeID',
-		        title: '員工編號',
-		        sortable: true,
-		        order: 'desc',
-		        filterControl: 'input',
-		        cellStyle: "cellStyle"
-		    }
-	}
+	var columns = config().col_staff
 	$("#btreceive").bootstrapTable({
 		columns:[columns.ck,columns.employeeID,columns.cDept,columns.cName,columns.eName],
 		data:data
@@ -490,7 +453,7 @@ function staff_receive(data){
 
 // 後端回傳資料會到這邊 callback
 function callback(name, jdata){
-	var columns = config().columns	
+	var columns = config().col_index	
 	// <th data-field="operate" data-formatter="operateFormatter" data-events="operateEvents"  data-click-to-select="false" class="col-md-2">簽核</th>
 	switch(name) {  
 	case "byprojectno":

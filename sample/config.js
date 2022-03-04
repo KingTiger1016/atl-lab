@@ -1,26 +1,28 @@
 // config()["XXX"] 引用方法
 function config() {
-	var config = new Object()
-	config["salseorder"] = [
-	{
-		id:"232",
-		name:"桃園銷貨單"
-	},{
-		id:"232-1",
-		name:"桃園銷貨單-外包"
-	},{
-		id:"235",
-		name:"五股銷貨單"
-	},{
-		id:"235-1",
-		name:"五股銷貨單-外包"
-	},{
-		id:"236",
-		name:"預開發票"
-	}
-	]
+    var config = new Object()
+    /*
+    config["salseorder"] = [
+    {
+        id:"232",
+        name:"桃園銷貨單"
+    },{
+        id:"232-1",
+        name:"桃園銷貨單-外包"
+    },{
+        id:"235",
+        name:"五股銷貨單"
+    },{
+        id:"235-1",
+        name:"五股銷貨單-外包"
+    },{
+        id:"236",
+        name:"預開發票"
+    }
+    ]
+    */
 
-    config["columns"] = {
+    config["col_index"] = {
         ck: {
             field: 'ck',
             checkbox: true
@@ -110,7 +112,7 @@ function config() {
             title: '主旨內容',
             sortable: true,
             filterControl: 'input',
-            width:'50%',
+            width: '50%',
             cellStyle: "cellStyle"
         },
         memo: {
@@ -137,20 +139,60 @@ function config() {
             field: 'sign',
             title: '簽核',
             align: 'center',
-            formatter:'operateFormatter'
+            formatter: 'operateFormatter'
         },
         open: {
             field: 'open',
             title: '開啟',
             align: 'center',
-            formatter:'operateFormatterRead'
+            formatter: 'operateFormatterRead'
         },
-        sampleLocation:{
+        sampleLocation: {
             field: 'sampleLocation',
             title: '庫位',
             sortable: true,
             filterControl: 'input',
             class: 'hidden-xs hidden-sm'
+        }
+    }
+
+    // 選人
+    config["col_staff"] = {
+        ck: {
+            field: 'ck',
+            checkbox: true
+        },
+        cDept: {
+            field: 'cDept',
+            title: '部門',
+            sortable: true,
+            order: 'desc',
+            filterControl: 'input',
+            cellStyle: "cellStyle"
+        },
+        cName: {
+            field: 'cName',
+            title: '中文姓名',
+            sortable: true,
+            order: 'desc',
+            filterControl: 'input',
+            cellStyle: "cellStyle"
+        },
+        eName: {
+            field: 'eName',
+            title: '英文姓名',
+            sortable: true,
+            order: 'desc',
+            filterControl: 'input',
+            cellStyle: "cellStyle"
+        },
+        employeeID: {
+            field: 'employeeID',
+            title: '員工編號',
+            sortable: true,
+            order: 'desc',
+            filterControl: 'input',
+            cellStyle: "cellStyle"
         }
     }
     return config
