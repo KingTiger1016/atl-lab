@@ -42,6 +42,7 @@ function config() {
             sortable: true,
             filterControl: 'input',
             class: "col-md-3",
+            visible: false,
             cellStyle: "cellStyle"
         },
         SampleName: {
@@ -128,7 +129,7 @@ function config() {
             sortable: true,
             filterControl: 'input',
             cellStyle: "cellStyle",
-            visible: false,
+            visible: true,
         },
         name: {
             field: 'name',

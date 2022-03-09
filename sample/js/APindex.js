@@ -155,7 +155,7 @@ $(function () {
 
 	// 初始化datepicker
 	setjsdatepicker();
-	iniVwlist("byprojectno")
+	iniVwlist("byowner")
 	// 權限檢查
 	checkrole('who', 1);
 }); // end ready
