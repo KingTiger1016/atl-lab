@@ -30,6 +30,9 @@ function hostip() {
 
 // 共用_呼叫ajax
 function ajaxPostData(name, data) {
+    $.blockUI({
+        message: '<h1>請稍候...</h1>' 
+    });
     data = JSON.stringify(data)
     data = data.replaceAll('{', ' ');
     data = data.replaceAll('}', ' ');
