@@ -33,7 +33,8 @@ function config() {
             sortable: true,
             order: 'desc',
             filterControl: 'input',
-            cellStyle: "cellStyle"
+            width: '15%'
+            // cellStyle: "cellStyle"
         },
         SampleNo: {
             field: 'SampleNo',
@@ -107,13 +108,19 @@ function config() {
             filterControl: 'input',
             class: 'hidden-xs hidden-sm'
         },
-        content: {
-            field: 'content',
-            title: '主旨內容',
+        mover: {
+            field: 'mover',
+            title: '移轉人',
             sortable: true,
             filterControl: 'input',
-            width: '50%',
+            // width:'50%',
             cellStyle: "cellStyle"
+        },
+        classify: {
+            field: 'classify',
+            title: '歸類',
+            sortable: true,
+            filterControl: 'input'
         },
         memo: {
             field: 'memo',
