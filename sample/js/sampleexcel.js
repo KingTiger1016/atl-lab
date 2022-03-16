@@ -14,15 +14,29 @@ $(function () {
 		var data = $('#btbody').bootstrapTable('getData');
 		data.forEach((i,j)=>{
 			data[j]["ProjectNo"] = i.ProjectNo.trim();
-			data[j]["SampleName"] = i.SampleName.trim();
+			// data[j]["SampleName"] = i.SampleName.trim();
 			data[j]["SampleType"] = i.SampleType.trim();
-			data[j]["memo"] = i.memo.trim();
-			data[j]["warehouse"] = i.warehouse.trim();
+			
+			if(typeof i.SampleNo=="undefined" || i.SampleNo.trim() == ""){
+				data[j]["SampleNo"] = "-";
+			}else{
+				data[j]["SampleNo"] = i.SampleNo.trim();
+			}
+
 			if(typeof i.memo=="undefined" || i.memo.trim() == ""){
-				data[j]["memo"] = "-"
+				data[j]["memo"] = "-";
+			}else{
+				data[j]["memo"] = i.memo.trim();
 			}
 			if(typeof i.warehouse=="undefined" || i.warehouse.trim() == ""){
-				data[j]["warehouse"] = "-"
+				data[j]["warehouse"] = "-";
+			}else{
+				data[j]["warehouse"] = i.warehouse.trim();
+			}
+			if(typeof i.classify=="undefined" || i.classify.trim() == ""){
+				data[j]["classify"] = "-";
+			}else{
+				data[j]["classify"] = i.classify.trim();
 			}
 			data[j]["LoginUser"] = $('#LoginUser').val();
 		})
@@ -115,7 +129,59 @@ function setjsdatepicker(){
 
 function inittable(){
 	$('#btbody').bootstrapTable({
-		columns:config().inittalbe
+		columns:[
+			{
+				field: 'id',
+				title: '序列',
+				sortable: false,
+				width: 40,
+				formatter: function (value, row, index) {
+					return index + 1;
+				}
+			},
+			{
+				field: 'ProjectNo',
+				title: '案件編號',
+				sortable: true,
+				filterControl: 'input'
+			},
+			{
+				field: 'SampleType',
+				title: '樣品類別',
+				sortable: true,
+				filterControl: 'input'
+			},
+			{
+				field: 'SampleNo',
+				title: '樣品編號',
+				sortable: true,
+				filterControl: 'input'
+			},
+			{
+				field: 'warehouse',
+				title: '庫位',
+				sortable: true,
+				filterControl: 'input'
+			},
+			{
+				field: 'classify',
+				title: '歸類',
+				sortable: true,
+				filterControl: 'input'
+			},
+			{
+				field: 'assales',
+				title: '業助',
+				sortable: true,
+				filterControl: 'input'
+			},
+			{
+				field: 'memo',
+				title: '備註',
+				sortable: true,
+				filterControl: 'input'
+			}
+		]
 	});
 }
 
