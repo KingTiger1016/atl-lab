@@ -42,12 +42,12 @@ function config() {
             sortable: true,
             filterControl: 'input',
             class: "col-md-3",
-            visible: false,
             cellStyle: "cellStyle"
         },
         SampleName: {
             field: 'SampleName',
             title: '樣品名稱',
+            visible: false,
             sortable: true,
             filterControl: 'input'
         },
