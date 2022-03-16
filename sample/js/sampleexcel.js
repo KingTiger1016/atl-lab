@@ -295,7 +295,7 @@ function callback(name, jdata){
 }
 
 function hostip(){
-	var test = false;
+	var test = true;
 	if(test){
 		return "http://192.168.5.12";
 	}else{
