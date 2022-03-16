@@ -230,31 +230,9 @@ function cellStyle(value, row, index) {
 	    }
 	}
 
-// 共用_呼叫ajax
-function ajaxPostData(name, data){
-	data = JSON.stringify(data)
-	// console.log(data);
-	data = data.replaceAll('{', ' ');
-	data = data.replaceAll('}', ' ');
-	// data = data.replaceAll('"', ' ');
-	data = encodeURI(data,"UTF-8");
-	// data = encodeURI(data,"UTF-8");
-    try {
-        $.ajax({
-            url: name + "?OpenAgent",
-            dataType: "jsonp",
-            data:data,
-            contentType:"application/x-www-form-urlencoded; charset=utf-8",
-            type: "POST"
-        })
-    }
-    catch(err) {
-        alert(err.message)
-    }
-}
-
 // 後端回傳資料會到這邊 callback
 function callback(name, jdata){
+	$.unblockUI();
 	switch(name) {
 	  case "GetUserRole":
 		// checkrole(jdata, 2);
@@ -294,14 +272,4 @@ function callback(name, jdata){
 	    alert("callback錯誤:"+name)
 		return false;
 	}
-}
-
-function hostip(){
-	var test = true;
-	if(test){
-		return "http://192.168.5.12";
-	}else{
-		return "https://hq.atl-lab.com.tw";
-	}
-	
 }

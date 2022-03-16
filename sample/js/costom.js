@@ -468,6 +468,7 @@ function ajaxPostData(name, data){
 
 // 後端回傳資料會到這邊 callback
 function callback(name, jdata){
+	$.unblockUI();
 	switch(name) {
 	  case "GetSaleAssistant":
 		  // console.log(jdata);
