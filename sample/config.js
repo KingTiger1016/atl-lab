@@ -154,7 +154,8 @@ function config() {
             field: 'open',
             title: '開啟',
             align: 'center',
-            formatter: 'operateFormatterRead'
+            formatter: 'operateFormatterRead',
+            width: '5%',
         },
         sampleLocation: {
             field: 'sampleLocation',
