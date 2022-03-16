@@ -1,4 +1,5 @@
 $(function () {
+
 	$("#btn_submit").click(function(){
 		// var json = $('#btbody').bootstrapTable('getData');
 	    //呼叫ajax
@@ -42,8 +43,9 @@ $(function () {
 		
 		var json = new Object();
 		json["Data"] = data;
+		// json["LoginUser"] = $('#LoginUser').val();
 		json["DataType"] = "SaveSample";
-		// console.log(json);
+		console.log(json);
 		ajaxPostData("(ajaxPostsampleexcel.jsonp)", json);
     });
 	
@@ -126,61 +128,8 @@ function setjsdatepicker(){
 }
 
 function inittable(){
-    // console.log(config().inittable)
 	$('#btbody').bootstrapTable({
-		columns:[
-            {
-                field: 'id',
-                title: '序列',
-                sortable: false,
-                width: 40,
-                formatter: function (value, row, index) {
-                    return index + 1;
-                }
-            },
-            {
-                field: 'ProjectNo',
-                title: '案件編號',
-                sortable: true,
-                filterControl: 'input'
-            },
-            {
-                field: 'SampleType',
-                title: '樣品類別',
-                sortable: true,
-                filterControl: 'input'
-            },
-            {
-                field: 'SampleNo',
-                title: '樣品編號',
-                sortable: true,
-                filterControl: 'input'
-            },
-            {
-                field: 'warehouse',
-                title: '庫位',
-                sortable: true,
-                filterControl: 'input'
-            },
-            {
-                field: 'classify',
-                title: '歸類',
-                sortable: true,
-                filterControl: 'input'
-            },
-            {
-                field: 'assales',
-                title: '業助',
-                sortable: true,
-                filterControl: 'input'
-            },
-            {
-                field: 'memo',
-                title: '備註',
-                sortable: true,
-                filterControl: 'input'
-            }
-        ]
+		columns:config().inittalbe
 	});
 }
 
