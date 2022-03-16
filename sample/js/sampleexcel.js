@@ -127,7 +127,7 @@ function setjsdatepicker(){
 
 function inittable(){
 	$('#btbody').bootstrapTable({
-		columns:config["inittable"]
+		columns:config().inittable
 	});
 }
 
