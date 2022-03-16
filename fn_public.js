@@ -33,6 +33,7 @@ function ajaxPostData(name, data) {
     $.blockUI({
         message: '<h1>請稍候...</h1>' 
     });
+    data["LoginUser"] = $('#LoginUser').val();
     data = JSON.stringify(data)
     data = data.replaceAll('{', ' ');
     data = data.replaceAll('}', ' ');

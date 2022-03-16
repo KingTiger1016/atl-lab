@@ -46,7 +46,7 @@ $(function () {
 		// json["LoginUser"] = $('#LoginUser').val();
 		json["DataType"] = "SaveSample";
 		console.log(json);
-		// ajaxPostData("(ajaxPostsampleexcel.jsonp)", json);
+		ajaxPostData("(ajaxPostsampleexcel.jsonp)", json);
     });
 	
 	$("#btn_uploader").click(function(){
