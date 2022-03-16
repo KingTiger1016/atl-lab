@@ -14,29 +14,15 @@ $(function () {
 		var data = $('#btbody').bootstrapTable('getData');
 		data.forEach((i,j)=>{
 			data[j]["ProjectNo"] = i.ProjectNo.trim();
-			// data[j]["SampleName"] = i.SampleName.trim();
+			data[j]["SampleName"] = i.SampleName.trim();
 			data[j]["SampleType"] = i.SampleType.trim();
-
-            if(typeof i.SampleNo=="undefined" || i.SampleNo.trim() == ""){
-				data[j]["SampleNo"] = "-";
-			}else{
-				data[j]["SampleNo"] = i.SampleNo.trim();
-			}
-			
+			data[j]["memo"] = i.memo.trim();
+			data[j]["warehouse"] = i.warehouse.trim();
 			if(typeof i.memo=="undefined" || i.memo.trim() == ""){
-				data[j]["memo"] = "-";
-			}else{
-				data[j]["memo"] = i.memo.trim();
+				data[j]["memo"] = "-"
 			}
 			if(typeof i.warehouse=="undefined" || i.warehouse.trim() == ""){
-				data[j]["warehouse"] = "-";
-			}else{
-				data[j]["warehouse"] = i.warehouse.trim();
-			}
-			if(typeof i.classify=="undefined" || i.classify.trim() == ""){
-				data[j]["classify"] = "-";
-			}else{
-				data[j]["classify"] = i.classify.trim();
+				data[j]["warehouse"] = "-"
 			}
 			data[j]["LoginUser"] = $('#LoginUser').val();
 		})
