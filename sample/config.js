@@ -190,8 +190,8 @@ function config() {
             filterControl: 'input'
         },
         {
-            field: 'SampleNo',
-            title: '樣品編號',
+            field: 'SampleName',
+            title: '樣品名稱',
             sortable: true,
             filterControl: 'input'
         },
