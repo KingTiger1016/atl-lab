@@ -41,9 +41,9 @@ function config() {
             title: '樣品編號',
             sortable: true,
             filterControl: 'input',
-            width: '15%'
+            width: '15%',
+            cellStyle: "cellStyle"
             // class: "col-md-3",
-            // cellStyle: "cellStyle"
         },
         SampleName: {
             field: 'SampleName',
